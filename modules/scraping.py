@@ -41,7 +41,7 @@ for item in tqdm(item_code):
     wholesale_price = get_wholesale_price(url, p_product_cls_code, item, p_country_code, today_date)
     if(wholesale_price == []) : continue
     for i in range(len(wholesale_price)):
-      tmp= dict(itertools.islice(wholesale_price[i].items(), 9)) # data for each product
+      tmp= dict(itertools.islice(wholesale_price[i].items(), 11)) # data for each product
       tmp['day1'] = today_date
       # tmp['m_code'] = 'W'+p_country_code # in case of scraping other region
       wholesale_price_data.append(tmp)

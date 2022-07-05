@@ -28,6 +28,7 @@ def preprocess_data(data):
 
     # 1. Replace "-" with np.NaN
     data['dpr1'].replace("-", np.NaN, inplace=True)
+    data['dpr2'].replace("-", np.NaN, inplace=True)
 
     # 2. Generate kind_name_new column with item_name & kind_name
     data['kind_name_new'] = data.apply(lambda x: make_product_name(x['item_name'], x['kind_name']), axis=1)
@@ -46,9 +47,9 @@ def preprocess_data(data):
     data['p_code'] = data['category_cd'] + "_" + data['kind_name_rank_label']
 
     # 7. Feature selection
-    data.rename(columns = {'item_name':'p_group', 'day1':'date', 'dpr1':'price'}, inplace = True)
+    data.rename(columns = {'item_name':'p_group', 'day1':'date', 'dpr1':'price_1', 'dpr2':'price_2'}, inplace = True)
     data['category_code'] = data['p_code']
-    data = data[['category_code', 'p_code', 'p_group', 'kind_name_new', 'rank', 'unit', 'price']]
+    data = data[['category_code', 'p_code', 'p_group', 'kind_name_new', 'rank', 'unit', 'price_1', 'price_2']]
 
     # 8. Save as csv file
     # data.to_csv('./data/daily_preprocessing/wholesale_{}_preprocessed.csv'.format(today_date), encoding = 'utf-8')
