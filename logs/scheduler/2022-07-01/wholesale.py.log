@@ -1,0 +1,14 @@
+[2022-07-01 08:34:00,801] {processor.py:153} INFO - Started process (PID=33) to work on /opt/airflow/dags/wholesale.py
+[2022-07-01 08:34:00,804] {processor.py:641} INFO - Processing file /opt/airflow/dags/wholesale.py for tasks to queue
+[2022-07-01 08:34:00,805] {logging_mixin.py:115} INFO - [2022-07-01 08:34:00,805] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/wholesale.py
+[2022-07-01 08:34:00,827] {logging_mixin.py:115} INFO - [2022-07-01 08:34:00,825] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/wholesale.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/wholesale.py", line 15, in <module>
+    from airflow.providers.microsoft.mssql.hooks.mssql import MsSqlHook
+ModuleNotFoundError: No module named 'airflow.providers.microsoft.mssql'
+[2022-07-01 08:34:00,828] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/wholesale.py
+[2022-07-01 08:34:00,842] {processor.py:161} INFO - Processing /opt/airflow/dags/wholesale.py took 0.046 seconds
