@@ -53,7 +53,7 @@ def preprocess_data(data):
 
     # 8. Save as csv file
     # data.to_csv('./data/daily_preprocessing/wholesale_{}_preprocessed.csv'.format(today_date), encoding = 'utf-8')
-    data.to_csv('./data/daily_preprocessing/wholesale_2022-06-23_preprocessed.csv', encoding = 'utf-8')
+    data.to_csv('./data/daily_preprocessing/wholesale_{}_preprocessed.csv'.format(today_date), encoding = 'utf-8')
     print("Preprocessing succeeded!")
 
 preprocess_data(data)
