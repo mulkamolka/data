@@ -17,9 +17,6 @@
 
 - BigQuery, Dataflow, Dataproc, Cloud Storage, Pub/Sub 등 gcp 제품과 통합이 용이
 
-
-Google Cloud Platform의 Managed 
-
 ### Cloud Composer 명령어
 
 - dag 리스트 확인
